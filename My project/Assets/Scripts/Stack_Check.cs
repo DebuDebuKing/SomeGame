@@ -28,7 +28,9 @@ public class Stack_Check : MonoBehaviour {
     private void Start()
     {
         Cam = GameObject.Find("TheCam");//Why i didn't place directly from editor is once i insantiate new obj the cam obj will be lost.
+
         CurrentObj = this.gameObject;
+
         if (!X_Z_Axis)
         {
             CurrentObj.transform.position = new Vector3(2, Y_pos, LastObj.transform.position.z);

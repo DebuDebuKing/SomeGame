@@ -281,6 +281,7 @@
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/AudioManager.cs"
+"Assets/Scripts/CameraScript.cs"
 "Assets/Scripts/DestroyTimer.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MainMenu_Script.cs"

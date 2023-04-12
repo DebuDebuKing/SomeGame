@@ -60,8 +60,8 @@
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu_Script.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Stack_Check.cs" />
-    <Compile Include="Assets\CameraScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

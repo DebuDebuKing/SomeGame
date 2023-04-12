@@ -17,11 +17,9 @@ public class CameraScript : MonoBehaviour
         {
             k = GameManager.Instance.Score;//this is to check if theres difference in score 
             y_axis += 0.2f;
-
         }
 
-
-        if (transform.position.y < y_axis)
+        if (transform.position.y < y_axis)//this is to lerp the position of the cam
         {
             CamUP();
         }
@@ -29,9 +27,6 @@ public class CameraScript : MonoBehaviour
 
     void CamUP()
     {
-
             transform.position = new Vector3(transform.position.x, transform.position.y + 1 * Time.deltaTime, transform.position.z);
-        
-        
     }
 }
