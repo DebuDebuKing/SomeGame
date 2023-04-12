@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Stack_Check : MonoBehaviour
-
-{   [HideInInspector]
+public class Stack_Check : MonoBehaviour {
+    
+    [HideInInspector]
     public GameObject Cam;
 
     public
@@ -33,12 +33,12 @@ public class Stack_Check : MonoBehaviour
         {
             CurrentObj.transform.position = new Vector3(2, Y_pos, LastObj.transform.position.z);
         }
-        else if(X_Z_Axis)
+        else if (X_Z_Axis)
         {
             CurrentObj.transform.position = new Vector3(LastObj.transform.position.x, Y_pos, 2);
         }
         MoveOpp = true;
-    
+
 
         rend = GetComponent<Renderer>();
 
@@ -51,14 +51,16 @@ public class Stack_Check : MonoBehaviour
         MoveTile();
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(!X_Z_Axis)//Alternating for the func
+            if (!X_Z_Axis)//Alternating for the func
             {
                 XAxisFunction();
             }
-           else if(X_Z_Axis)
+            else if (X_Z_Axis)
             {
                 ZAxisFunction();
-            }  
+            }
+            //Cam.transform.position = new Vector3(Cam.transform.position.x, Cam.transform.position.y + 0.2f, Cam.transform.position.z);//Increasing the position for the y axis
+
         }
     }
     void ZAxisFunction()
@@ -82,8 +84,8 @@ public class Stack_Check : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, ZSize);//applying both scale and postion
             transform.position = new Vector3(transform.position.x, transform.position.y, ZPos);
 
-            if(Mathf.Abs(distance) <= 0.05f) {
-                print("Nice!"); 
+            if (Mathf.Abs(distance) <= 0.05f) {
+                print("Nice!");
                 GameObject clone = Instantiate(Part_eff, transform.position, transform.rotation);
                 AudioManager.M_Instance.Perfect_Sound();
             }
@@ -98,8 +100,7 @@ public class Stack_Check : MonoBehaviour
             if (!X_Z_Axis) Clone.GetComponent<Stack_Check>().X_Z_Axis = true;//This is just to alternate between the Z and X movement
             else if (X_Z_Axis) Clone.GetComponent<Stack_Check>().X_Z_Axis = false;
 
-            Cam.transform.position = new Vector3(Cam.transform.position.x, Cam.transform.position.y + 0.2f, Cam.transform.position.z);//Increasing the position for the y axis
-            print(Y_pos);
+   
             GameManager.Instance.Addscore();
             Destroy(this);
         }
@@ -138,8 +139,8 @@ public class Stack_Check : MonoBehaviour
             Clone.GetComponent<Stack_Check>().Y_pos += 0.2f;
             Clone.GetComponent<Stack_Check>().LastObj = CurrentObj;
 
-            Cam.transform.position = new Vector3(Cam.transform.position.x, Cam.transform.position.y + 0.2f, Cam.transform.position.z);
-            print(Y_pos);
+
+     
 
             if (!X_Z_Axis) Clone.GetComponent<Stack_Check>().X_Z_Axis = true;
             else if (X_Z_Axis) Clone.GetComponent<Stack_Check>().X_Z_Axis = false;
@@ -164,7 +165,7 @@ public class Stack_Check : MonoBehaviour
             if (CurrentObj.transform.position.x >= MaxDist) MoveOpp = true;
             else if (CurrentObj.transform.position.x <= -MaxDist) MoveOpp = false;
         }
-        else if(X_Z_Axis)//Moves in Z Axis
+        else if (X_Z_Axis)//Moves in Z Axis
         {
             if (MoveOpp)
                 CurrentObj.transform.Translate(0, 0, -2f * Time.deltaTime);
@@ -176,5 +177,6 @@ public class Stack_Check : MonoBehaviour
             else if (CurrentObj.transform.position.z <= -MaxDist) MoveOpp = false;
         }
     }
+
 
 }

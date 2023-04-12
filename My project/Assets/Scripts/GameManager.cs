@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-
-    int Score;
+    [HideInInspector]
+    public int Score;
     [SerializeField]
     Text ScoreText;
     public static GameManager Instance { get; private set; }
