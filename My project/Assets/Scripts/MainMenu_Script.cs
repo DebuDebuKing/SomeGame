@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class MainMenu_Script : MonoBehaviour
 {
 
@@ -12,6 +13,7 @@ public class MainMenu_Script : MonoBehaviour
     bool options = false;
     [SerializeField] GameObject sfx_marker;
     [SerializeField] GameObject bgm_marker;
+    [SerializeField] Text Highscoretext;
    public void ChangeScene(string name)
     {
         SceneManager.LoadScene(name);
@@ -37,6 +39,10 @@ public class MainMenu_Script : MonoBehaviour
         {
             sfx_marker.SetActive(false);
         }
+
+
+        Highscoretext.GetComponent<Text>();
+        Highscoretext.text = "Highscore: " + PlayerPrefs.GetInt("SCORE");
 
     }
 
@@ -83,6 +89,12 @@ public class MainMenu_Script : MonoBehaviour
             AudioManager.M_Instance.bgm_o = true;
             bgm_marker.SetActive(true);
         }
+    }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.DeleteAll();
+        Highscoretext.text = "Highscore: " + PlayerPrefs.GetInt("SCORE");
     }
 
 }

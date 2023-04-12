@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AudioManager
+    - DestroyTimer
     - GameManager
     - MainMenu_Script
     - Stack_Check
@@ -44,6 +45,9 @@ ScriptsOnlyBuild:
     methodName: ChangeScene
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu_Script
+    methodName: ResetScore
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu_Script
     methodName: BGM
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu_Script
@@ -70,28 +74,38 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1556}
+    - Class: 114
       Script: {instanceID: 2530}
     - Class: 114
       Script: {instanceID: 2732}
     - Class: 114
-      Script: {instanceID: 5148}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 5182}
+      Script: {instanceID: 5150}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5184}
     - Class: 114
-      Script: {instanceID: 5894}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 6248}
+      Script: {instanceID: 5896}
+    - Class: 114
+      Script: {instanceID: 6250}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -125,6 +139,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -132,6 +148,10 @@ ScriptsOnlyBuild:
     - Class: 83
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -144,15 +164,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3004}
     - Class: 114
-      Script: {instanceID: 4126}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 4764}
+      Script: {instanceID: 4128}
     - Class: 114
-      Script: {instanceID: 5148}
+      Script: {instanceID: 4766}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5150}
     - Class: 114
-      Script: {instanceID: 5894}
+      Script: {instanceID: 5444}
+    - Class: 114
+      Script: {instanceID: 5896}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -386,6 +408,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 054c11ebe7357ca64685056210b17e5a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DestroyTimer
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -554,7 +582,7 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: 052f17209f015f2cf7fa1de8fc28ec3e
+      Hash: 339e8d5f0d8a3d078f5d0255fe708797
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioManager
@@ -632,7 +660,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 6208291aa0b7dda70996dc3ec4a61f3e
+      Hash: c87a6a2e114cd39fb0939f9881d4d82e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu_Script
@@ -794,7 +822,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: c986fc266a12840de5e71e047d5c2ca4
+      Hash: aaa63ac49e16deb356c8afd14adb4204
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Stack_Check

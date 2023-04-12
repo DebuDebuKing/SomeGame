@@ -113,6 +113,6 @@ MonoBehaviour:
   Cam: {fileID: 0}
   LastObj: {fileID: 0}
   CurrentObj: {fileID: 0}
-  Self: {fileID: 0}
+  Part_eff: {fileID: 345839566297284859, guid: c77bd6b2a7416f04fb3aba0da4f8c27e, type: 3}
   Y_pos: 0.2
   X_Z_Axis: 0

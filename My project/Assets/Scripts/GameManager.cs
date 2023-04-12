@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 
     void Awake()
     {
+       
         if (Instance == null)
         {
             Instance = this;
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour {
     {
         Score += 1;
         ScoreText.text = "Score: " + Score;
+        if(PlayerPrefs.GetInt("SCORE") < Score)
+        {
+            PlayerPrefs.SetInt("SCORE", Score);
+        }
     }
 
 

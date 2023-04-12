@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     GameObject child_bgm;
 
-    public AudioClip sfxClip;
+    public AudioClip sfx_hit,sfx_clip_Perfect;
 
     private AudioSource audi;
 
@@ -21,38 +21,33 @@ public class AudioManager : MonoBehaviour
         if (M_Instance == null)
         {
             M_Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);//I decided on dontdestroyonload , so i can have constant bgm throughout the scene
         }
         else
         {
             Destroy(gameObject);
-        }
-
-       
+        } 
     }
-
     void Start()
     {
-        // Get a reference to the AudioSource on this GameObject
         audi = GetComponent<AudioSource>();
         child_bgm = transform.Find("BGM").gameObject;
    
     }
-
     void Update()
     {
-        // Check for input to play the sound effect
+
         if (sfx_o)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                // Stop the current clip, if playing
+               //if there an audio going on it will stop and play the current one
                 audi.Stop();
 
-                // Set the new clip
-                audi.clip = sfxClip;
+            
+                audi.clip = sfx_hit;
 
-                // Play the sound effect
+                
                 audi.Play();
             }
         }
@@ -64,6 +59,17 @@ public class AudioManager : MonoBehaviour
         else if(!bgm_o)
         {
             child_bgm.SetActive(false);
+        }
+    }
+
+    public void Perfect_Sound()
+    {
+        if(sfx_o)
+        {
+            audi.clip = sfx_clip_Perfect;
+
+
+            audi.Play();
         }
     }
 
