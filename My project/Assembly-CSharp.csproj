@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\MainMenu_Script.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Stack_Check.cs" />
+    <Compile Include="Assets\Scripts\DestroyTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

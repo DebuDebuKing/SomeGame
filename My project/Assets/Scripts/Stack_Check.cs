@@ -106,7 +106,7 @@ public class Stack_Check : MonoBehaviour
 
         float distance;
 
-        distance = transform.position.z - LastObj.transform.position.z;
+        distance = transform.position.z - LastObj.transform.position.z;//Find the distance between the lastobj with the current.
         if (Mathf.Abs(distance) >= LastObj.transform.localScale.z)
         {
             SceneManager.LoadScene("MainMenu");
@@ -138,6 +138,7 @@ public class Stack_Check : MonoBehaviour
 
     void MoveTile()
     {
+        //Moves in X Axis 
         if (!X_Z_Axis)
         {
             if (MoveOpp)
@@ -149,7 +150,7 @@ public class Stack_Check : MonoBehaviour
             if (CurrentObj.transform.position.x >= MaxDist) MoveOpp = true;
             else if (CurrentObj.transform.position.x <= -MaxDist) MoveOpp = false;
         }
-        else if(X_Z_Axis)
+        else if(X_Z_Axis)//Moves in Z Axis
         {
             if (MoveOpp)
                 CurrentObj.transform.Translate(0, 0, -2f * Time.deltaTime);
